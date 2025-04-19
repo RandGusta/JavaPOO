@@ -1,54 +1,84 @@
 import java.util.Scanner;
-public class Main{
-    public static void main(String args[]){
+public class Main3 {
 
-        CriadorPalavrasAleatorias criador = new CriadorPalavrasAleatorias();
-        DescobertaCacaPalavras teste1 = new DescobertaCacaPalavras();
-        GerarTabuleiro teste2 = new GerarTabuleiro(criador);
+    public static void main(String args[]) {
         Scanner scanner = new Scanner(System.in);
+
+        PalavrasAleatorias palavraaleatoria1 = new PalavrasAleatorias();
+        VerificarResposta verificarresposta1 = new VerificarResposta(palavraaleatoria1.getPalavraSorteada());
+        EmbaralharPalavra embaralhada = new EmbaralharPalavra(palavraaleatoria1.getPalavraSorteada());
+        Dica dica1 =  new Dica(palavraaleatoria1.getPalavraSorteada());
+
+        System.out.print("Vamos brincar de adivinhe a palavra você terá 5 tentativas, a palavra sorteada foi: ");
+        System.out.println(embaralhada.getPalavraEmbaralhada());
+
         int cont = 0;
 
-        while(true) {
+        for(int i =0; i<5; i++) {
             System.out.print("Informe a palavra que quer chutar: ");
             String chute = scanner.nextLine();
             cont++;
-            boolean acertou = teste1.acertou(chute);
+            boolean acertou = verificarresposta1.acertou(chute);
             if (!acertou) {
+                if(cont == 2){
+                    dica1.dicaPrimeiraLetra();
 
-                if (cont == 1) {
-                    teste1.dicaLetraInicial();
-                } else if (cont == 2) {
-                    teste1.dicaQuantidadeLetras();
+                } else if (cont==4) {
+                    dica1.dicaUltimaLetra();
 
-                } else if (cont == 3) {
-                    teste1.dicaUltimaLetra();
-
-                } else if (cont == 4) {
-                    System.out.print("Deseja desistir?[s/n]");
-                    String opcao = scanner.nextLine();
-                    if ((opcao.toLowerCase()).equals("s")) {
-                        break;
-                    } else if((opcao.toLowerCase()).equals("n")) {
-                        continue;
-                    } else {
-                        System.out.println("Opção inválida");
-
-                            }
-                        }
-                    }
-
-
-        else {
+                } else if (cont==5) {
                     break;
+
+                } else {
+                    System.out.println("tente novamente...");
+
                 }
+            } else {
+                System.out.println("PARABÉNS VOCÊ ACERTOU");
+                break;
             }
 
 
+        }
+        PalavrasAleatorias palavraaleatoria2 = new PalavrasAleatorias();
+        VerificarResposta verificarresposta2 = new VerificarResposta(palavraaleatoria2.getPalavraSorteada());
+        CriarTabuleiro tabuleiroCriado = new CriarTabuleiro(palavraaleatoria2.getPalavraSorteada());
+
+        Dica dica2 = new Dica(palavraaleatoria2.getPalavraSorteada());
+
+        System.out.println("Vamos brincar CAÇA PALAVRAS  5 tentativas");
+        tabuleiroCriado.printTabuleiro();
+
+        int cont2 = 0;
+
+        for(int i =0; i<5; i++) {
+            System.out.print("Informe a palavra que quer chutar: ");
+            String chute = scanner.nextLine();
+            cont2++;
+            boolean acertou = verificarresposta2.acertou(chute);
+            if (!acertou) {
+                if(cont2 == 2){
+                    dica2.dicaPrimeiraLetra();
+
+                } else if (cont2==4) {
+                    dica2.dicaUltimaLetra();
+
+                } else if (cont2==5) {
+                    break;
+
+                } else {
+                    System.out.println("tente novamente...");
+
+                }
+            } else {
+                System.out.println("PARABÉNS VOCÊ ACHOU");
+                break;
+            }
 
 
         }
 
 
+
     }
-
-
+}
