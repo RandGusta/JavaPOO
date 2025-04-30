@@ -29,7 +29,7 @@ public void status() {
 
 }
 
-public void ganhaLuta() {
+public void ganharLuta() {
     this.setVitoria(1);
 }
 
