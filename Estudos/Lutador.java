@@ -23,7 +23,14 @@ public Class Lutador{
 	System.out.println("E " + this.getAltura() + "de altura");
 	}
 
-	public void status(){}
+	public void status(){
+		System.out.println("Nome: " + this.getNome());
+		System.out.println("Nacionalidade: " + this.getNacionalidade());
+		System.out.println("Peso: " + this.getPeso());
+		System.out.println("Altura: " + this.getAltura());
+		System.out.println("Vitorias" + this.getVitorias());
+		
+	}
 
   	public boolean ganhaLuta(){}
 
