@@ -23,6 +23,7 @@ public class Lutador{
 
 
     public void apresentar() {
+        System.out.println("___________________________");
         System.out.println("Senhoras e senhores, com vocês " + this.getNome() + "!!!!!");
         System.out.println("Sendo " + this.nacionalidade);
         System.out.println("Com " + this.getPeso() + " quilos ");
@@ -87,6 +88,9 @@ public class Lutador{
         }
         public String getNome(){
             return this.nome;
+        }
+        public String getCategoria(){
+            return this.categoria;
         }
 
 
