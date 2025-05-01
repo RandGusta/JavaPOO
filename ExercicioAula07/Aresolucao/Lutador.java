@@ -10,7 +10,7 @@ private int vitorias;
 private int derrotas;
 private int empates;
 
-public Lutador(String nome, String nacionalidade, int idade, double altura,  double peso, String categoria, int vitorias, int derrotas, int empates){
+public Lutador(String nome, String nacionalidade, int idade, double altura,  double peso, int vitorias, int derrotas, int empates){
     this.nome = nome;
     this.nacionalidade = nacionalidade;
     this.idade = idade;
