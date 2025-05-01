@@ -1,15 +1,8 @@
 public class Main {
   public static void main(String[] args){
-      Lutador l1 = new Lutador("Calango lulinha", "Brasileiro", 13);
+      Lutador l1 = new Lutador("Calango lulinha", "Brasileiro", 23, 1.71, 78.34, 4, 3, 1);
       
-      Lutador l2 = new lutador();
-      l2.setNome("Laranjinha comunista");
-      l2.setNacionalidade("Americano");
-      l2.setIdade(27);
-      l2.setAltura(1.69);
-      l2.setCategoria("pena");
-      l2.setPeso(80.87);
-      l2.apresentar();
+      Lutador l2 = new lutador("Laranjinha comunista", "Americano", 27, 1.69, 75.90, 3, 5, 2);
 
       int pontos1 = 0;
       int pontos2 = 0;
