@@ -30,6 +30,7 @@ public class Lutador{
     }
 
     public void status() {
+        System.out.println("___________________________");
         System.out.println("Nome: " + this.nome);
         System.out.println("Nacionalidade: " + this.nacionalidade);
         System.out.println("Categoria: " + this.categoria);
