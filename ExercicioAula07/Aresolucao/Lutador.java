@@ -15,11 +15,10 @@ public Lutador(String nome, String nacionalidade, int idade, double altura,  dou
     this.nacionalidade = nacionalidade;
     this.idade = idade;
     this.altura = altura;
-    this.peso = peso;
-    this.categoria = categoria;
+    this.setPeso(peso);
     this.vitorias = vitorias;
     this.derrotas = derrotas;
-    this.empates = empates 
+    this.empates = empates;
 }
 
 
@@ -31,106 +30,46 @@ public void apresentar() {
 }
 
 public void status() {
-    System.out.println("Nome: " + this.getNome());
-    System.out.println("Nacionalidade: " + this.getNacionalidade());
-    System.out.println("Peso: " + this.getPeso());
-    System.out.println("Altura: " + this.getAltura());
-    System.out.println("Vitorias: " + this.getVitoria());
-    System.out.println("Derrotas: " + this.getDerrotas());
-    System.out.println("Empates: " + this.getEmpates());
+    System.out.println("Nome: " + this.nome);
+    System.out.println("Nacionalidade: " + this.nacionalidade);
+    System.out.println("Categoria: " + this.categoria);
+    System.out.println("Peso: " + this.peso);
+    System.out.println("Altura: " + this.altura);
+    System.out.println("Vitorias: " + this.vitorias);
+    System.out.println("Derrotas: " + this.derrotas);
+    System.out.println("Empates: " + this.empates);
 
 }
 
 public void ganharLuta() {
-    this.setVitoria(1);
+    this.vitorias += 1;
 }
 
 public void perderLuta() {
-    this.setDerrotas(1);
+    this.derrotas += 1;
 }
 
 public void empatarLuta() {
-    this.setEmpates(1);
+    this.empates += 1;
 }
 
-public void setNome(String nome) {
-    this.nome = nome;
-}
-
-public void setNacionalidade(String nacionalidade) {
-    this.nacionalidade = nacionalidade;
-}
-
-public void setIdade(int idade) {
-    this.idade = idade;
-}
-
-public void setPeso(double peso) {
+public void setPeso(double peso){
     this.peso = peso;
-}
-
-public void setAltura(double altura) {
-    this.altura = altura;
-}
-
-public void setCategoria(String categoria) {
-    this.categoria = categoria;
-}
-
-public void setVitoria(int vitoria) {
-    this.vitorias += vitoria;
-}
-
-public void setDerrotas(int derrotas) {
-    this.derrotas += derrotas;
-}
-
-public void setEmpates(int empates) {
-    this.empates += empates;
-}
-
-public String getNome() {
-    return this.nome;
-
-}
-
-public String getNacionalidade() {
-    return this.nacionalidade;
-
-}
-
-public int getIdade() {
-    return this.idade;
-
-}
-
-public double getAltura() {
-    return this.altura;
-
-}
-
-public double getPeso() {
-    return this.peso;
-}
-
-public String getCategoria() {
-    return this.categoria;
-
-}
-
-public int getVitoria() {
-    return this.vitorias;
-}
-
-public int getDerrotas() {
-    return this.derrotas;
-}
-
-public int getEmpates() {
-    return this.empates;
+    this.categoria = definirCategoria();
 }
 
 
-
+private String definirCategoria(double peso) {
+    if(peso < 52.2){
+        return "inválido"; 
+    } else if(peso <= 70.3) {
+        return "leve";
+    } else if(peso <= 83.9){
+        return "Médio";
+    } else if(peso <= 120.2){
+        return "Pesado";
+    } else {
+        return "Inválido";
+}
 
 }
