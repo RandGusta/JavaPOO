@@ -1,11 +1,19 @@
-public class Livro{
+public class Livro implements Publicacao{
   private String titulo;
   private String autor;
   private int totPag;
   private int pagAtual;
   private boolean aberto;
   private Pessoa leitor;
-  private boolean emprestado;
+
+  public Livro(String titulo, String autor, int totPag, Pessoa leitor){
+    this.titulo = titulo;
+    this.autor = autor;
+    this.totPag = totPag;
+    this.pagAtual = 0;
+    this.aberto = false;
+    this.leitor = leitor;
+  }
 
 
   public void detalhes(){
@@ -15,12 +23,34 @@ public class Livro{
     System.out.println("Emprestado: " + this.emprestado);
   }
 
-  public void fazerEmprestimo(){
-    this.emprestado = true;
+  
+  @Override
+  public void abrir(){
+    this.aberto = true;
   }
-
-  public void devolver(){
-    this.emprestado = false;
+  
+  @Override
+  public void fechar(){
+    this.aberto = false;
   }
+  
+  @Override 
+  public void folhear(int pag){
+    this.abrir();
+    this.pagAtual = pag;
+  }
+  
+  @Override 
+  public void avancarPagina(){
+    this.abrir();
+    this.pagAtual += 1;
+  }
+  
+  @Override
+  public void voltarPagina(){
+    this.abrir();
+    this.pagAtual -= 1;
+  }
+  
   
 }
