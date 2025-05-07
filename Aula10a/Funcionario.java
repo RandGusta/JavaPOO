@@ -4,7 +4,7 @@ public class Funcionario extends Pessoa{
 
 
   public void mudarTrabalho(){
-    this.trabalhando = !this.trabalhando
+    this.trabalhando = !this.trabalhando;
   }
 
   public String getSetor(){
