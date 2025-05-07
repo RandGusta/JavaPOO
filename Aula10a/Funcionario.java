@@ -4,12 +4,18 @@ public class Funcionario extends Pessoa{
 
 
   public void mudarTrabalho(){
+    this.trabalhando = !this.trabalhando
   }
 
   public String getSetor(){
     return this.setor;
   }
+
   public boolean getTrabalhando(){
     return this.trabalhando;
   }
+  public void setSetor(String setor){
+    this.setor = setor;
+  }
+  
 }
