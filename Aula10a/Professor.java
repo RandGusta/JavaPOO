@@ -14,7 +14,7 @@ public class Professor{
     this.especialidade = especialidade;
   }
 
-  public double setSalario(int salario){
+  public double setSalario(double salario){
     this.salario = salario;
   }
   
