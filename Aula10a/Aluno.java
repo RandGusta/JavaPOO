@@ -1,17 +1,22 @@
 public class Aluno extends Pessoa{
-  private String matricula;
+  private int matricula;
   private String curso;
 
   public void cancelarMatricula(){
-    this.matricula = "Matricula Não encontrada";
+    System.out.println("Matricula cancelada");
   }
 
-  public String getMatricula(){
+  public int getMatricula(){
     return this.matricula;
   }
 
   public String getCurso(){
     return this.curso;
   }
+
+  public void setCurso(String curso){
+    this.curso = curso;
+  }
+  
   
 }
