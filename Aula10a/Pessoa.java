@@ -30,5 +30,9 @@ public void setSexo(String sexo){
   this.sexo = sexo;
 }
 
+public String toString(){
+  return "Pessoa{" + "nome = " + nome + ", idade = " + idade + ", sexo = " + sexo + "}";
+}
+
   
 }
