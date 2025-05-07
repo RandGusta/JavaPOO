@@ -14,6 +14,8 @@ public class Main{
     p2.setCurso("Informática");
     p3.setSalario(2500.75);
     p4.setSetor("Estoque");
+
+    System.out.println(p1.toString());
     
   
   
