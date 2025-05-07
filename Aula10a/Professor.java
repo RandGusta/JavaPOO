@@ -9,5 +9,13 @@ public class Professor{
   public String getEspecialidade(){
     return this.especialidade;
   }
+
+  public void setEspecialidade(String especialidade){
+    this.especialidade = especialidade
+  }
+
+  public double setSalario(int salario){
+    this.salario = salario;
+  }
   
 }
